@@ -36,6 +36,12 @@ namespace FWCScoreBoard.Library.UnitTests.Domain
                 _sut.Id.Should().Be(_id);
             }
 
+            [Fact]
+            public void Then_It_Should_Have_Start_Date()
+            {
+                _sut.StartDate.Should().NotBeSameDateAs(new DateTime());
+            }
+
         }
     }
 }
