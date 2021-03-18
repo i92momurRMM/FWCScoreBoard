@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{23F939F8-2893-4EE4-A9F1-38D2047D609A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWCScoreBoard.Library", "src\FWCScoreBoard.Library\FWCScoreBoard.Library.csproj", "{F5A854C2-31F8-417A-A4FB-B409ACFA770E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FWCScoreBoard.Library", "src\FWCScoreBoard.Library\FWCScoreBoard.Library.csproj", "{F5A854C2-31F8-417A-A4FB-B409ACFA770E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{73C82B7A-40CB-4FC8-B9E5-93B99AFE1481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWCScoreBoard.Library.UnitTests", "test\FWCScoreBoard.Library.UnitTests\FWCScoreBoard.Library.UnitTests.csproj", "{2E790197-CB47-411F-B54A-7AA13F2E0F4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{F5A854C2-31F8-417A-A4FB-B409ACFA770E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5A854C2-31F8-417A-A4FB-B409ACFA770E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5A854C2-31F8-417A-A4FB-B409ACFA770E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E790197-CB47-411F-B54A-7AA13F2E0F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E790197-CB47-411F-B54A-7AA13F2E0F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E790197-CB47-411F-B54A-7AA13F2E0F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E790197-CB47-411F-B54A-7AA13F2E0F4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F5A854C2-31F8-417A-A4FB-B409ACFA770E} = {23F939F8-2893-4EE4-A9F1-38D2047D609A}
+		{2E790197-CB47-411F-B54A-7AA13F2E0F4B} = {73C82B7A-40CB-4FC8-B9E5-93B99AFE1481}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA8D922C-161A-4986-9C1F-8E493E1BF3BC}
