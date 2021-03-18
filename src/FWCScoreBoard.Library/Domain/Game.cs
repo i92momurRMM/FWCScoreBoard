@@ -9,6 +9,7 @@ namespace FWCScoreBoard.Library.Domain
 		public string HomeTeam { get; private set; }
 		public string AwayTeam { get; private set; }
 		public int HomeTeamScore { get; private set; }
+		public int AwayTeamScore { get; private set; }
 
 		public Game(Guid id)
 		{
