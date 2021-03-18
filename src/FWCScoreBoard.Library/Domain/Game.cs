@@ -1,4 +1,5 @@
 ﻿using System;
+using FWCScoreBoard.Library.Exceptions;
 
 namespace FWCScoreBoard.Library.Domain
 {
@@ -19,6 +20,9 @@ namespace FWCScoreBoard.Library.Domain
 
 		public void AddHomeTeam(string homeTeam)
 		{
+			if (String.IsNullOrEmpty(homeTeam))
+				throw new InvalidTeamException($"Invalid team code {homeTeam}. It must be not null and empty");
+
 			HomeTeam = homeTeam;
 		}
 	}
