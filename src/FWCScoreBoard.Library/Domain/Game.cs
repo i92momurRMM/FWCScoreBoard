@@ -44,6 +44,9 @@ namespace FWCScoreBoard.Library.Domain
 
 		public void AddAwayTeamScore(int awayTeamScore)
 		{
+			if (awayTeamScore < 0)
+				throw new InvalidScoreException($"Invalid score {awayTeamScore}. It this must be greater than or equal to zero");
+
 			AwayTeamScore = awayTeamScore;
 		}
 	}
