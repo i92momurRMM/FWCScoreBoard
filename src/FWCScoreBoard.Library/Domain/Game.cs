@@ -1,10 +1,14 @@
-﻿namespace FWCScoreBoard.Library.Domain
+﻿using System;
+
+namespace FWCScoreBoard.Library.Domain
 {
 	public class Game
 	{
-		public Game()
-		{
+		public Guid Id { get; }
 
+		public Game(Guid id)
+		{
+			Id = id;
 		}
 	}
 }

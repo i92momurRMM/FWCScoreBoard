@@ -12,14 +12,16 @@ namespace FWCScoreBoard.Library.UnitTests.Domain
             : Given_When_Then_Test
         {
             private Game _sut;
+            private Guid _id;
 
             protected override void Given()
             {
+                _id = Guid.Empty;
             }
 
             protected override void When()
             {
-                _sut = new Game();
+                _sut = new Game(_id);
             }
 
             [Fact]
@@ -27,6 +29,13 @@ namespace FWCScoreBoard.Library.UnitTests.Domain
             {
                 _sut.Should().NotBeNull();
             }
+
+            [Fact]
+            public void Then_It_Should_Have_The_Expected_Id()
+            {
+                _sut.Id.Should().Be(_id);
+            }
+
         }
     }
 }
