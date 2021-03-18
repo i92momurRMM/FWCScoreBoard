@@ -53,6 +53,12 @@ namespace FWCScoreBoard.Library.UnitTests.Domain
             {
                 _sut.AwayTeam.Should().BeNull();
             }
+
+            [Fact]
+            public void Then_It_Should_Have_Home_Team_Score_To_Zero()
+            {
+                _sut.HomeTeamScore.Should().Be(0);
+            }
         }
     }
 }
