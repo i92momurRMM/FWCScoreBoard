@@ -34,5 +34,32 @@ namespace FWCScoreBoard.Library.UnitTests.Domain
                 _sut.AwayTeam.Should().Be(_awayTeam);
             }      
         }
+        
+        public class Given_A_Game_When_Adding_An_Invalid_Away_Team
+            : Given_When_Then_Test
+        {
+            private Game _sut;
+            private string _awayTeam;
+            private Action _action;
+
+            protected override void Given()
+            {
+                var id = Guid.Empty;
+                _sut = new Game(id);
+
+                _awayTeam = "";
+            }
+
+            protected override void When()
+            {
+                _action = () => _sut.AddAwayTeam(_awayTeam);
+            }
+
+            [Fact]
+            public void Then_It_Should_Throw_An_InvalidTeamException()
+            {
+                _action.Should().Throw<InvalidTeamException>();
+            }
+        }      
     }
 }

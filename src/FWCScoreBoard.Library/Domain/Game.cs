@@ -28,6 +28,9 @@ namespace FWCScoreBoard.Library.Domain
 
 		public void AddAwayTeam(string awayTeam)
 		{
+			if (String.IsNullOrEmpty(awayTeam))
+				throw new InvalidTeamException($"Invalid team code {awayTeam}. It must be not null and empty");
+
 			AwayTeam = awayTeam;
 		}
 	}
