@@ -11,6 +11,7 @@ namespace FWCScoreBoard.Library.Domain
 		public string AwayTeam { get; private set; }
 		public int HomeTeamScore { get; private set; }
 		public int AwayTeamScore { get; private set; }
+		private string Summary => $"{HomeTeam} {HomeTeamScore} - {AwayTeam} {AwayTeamScore}";
 
 		public Game(Guid id)
 		{
@@ -48,6 +49,11 @@ namespace FWCScoreBoard.Library.Domain
 				throw new InvalidScoreException($"Invalid score {awayTeamScore}. It this must be greater than or equal to zero");
 
 			AwayTeamScore = awayTeamScore;
+		}
+
+		public string GetSummary()
+		{
+			return Summary;
 		}
 	}
 }
