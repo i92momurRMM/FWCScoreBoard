@@ -41,5 +41,10 @@ namespace FWCScoreBoard.Library.Domain
 
 			HomeTeamScore = homeTeamScore;
 		}
+
+		public void AddAwayTeamScore(int awayTeamScore)
+		{
+			AwayTeamScore = awayTeamScore;
+		}
 	}
 }
