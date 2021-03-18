@@ -36,6 +36,9 @@ namespace FWCScoreBoard.Library.Domain
 
 		public void AddHomeTeamScore(int homeTeamScore)
 		{
+			if (homeTeamScore < 0)
+				throw new InvalidScoreException($"Invalid score {homeTeamScore}. It must be greater than or equal to zero");
+
 			HomeTeamScore = homeTeamScore;
 		}
 	}

@@ -38,5 +38,35 @@ namespace FWCScoreBoard.Library.UnitTests.Domain
             }
 
         }
+
+        public class Given_A_Started_Game_When_Receiving_A_Nevative_Home_Team_Score
+            : Given_When_Then_Test
+        {
+            private Game _sut;
+            private int _homeTeamScore;
+            private Action _action;
+
+            protected override void Given()
+            {
+                var id = Guid.Empty;
+                _sut = new Game(id);
+
+                _sut.AddHomeTeam("Mexico");
+                _sut.AddAwayTeam("Canada");
+                _homeTeamScore = -1;
+
+            }
+
+            protected override void When()
+            {
+                _action = () => _sut.AddHomeTeamScore(_homeTeamScore);
+            }
+
+            [Fact]
+            public void Then_It_Should_Throw_An_InvalidScoreException()
+            {
+                _action.Should().Throw<InvalidScoreException>();
+            }
+        }
     }
 }
