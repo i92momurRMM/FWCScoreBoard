@@ -42,6 +42,11 @@ namespace FWCScoreBoard.Library.UnitTests.Domain
                 _sut.StartDate.Should().NotBeSameDateAs(new DateTime());
             }
 
+            [Fact]
+            public void Then_It_Should_Have_Null_Home_Team()
+            {
+                _sut.HomeTeam.Should().BeNull();
+            }
         }
     }
 }

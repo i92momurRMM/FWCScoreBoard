@@ -6,6 +6,7 @@ namespace FWCScoreBoard.Library.Domain
 	{
 		public Guid Id { get; }
 		public DateTime StartDate { get; }
+		public string HomeTeam { get; private set; }
 
 		public Game(Guid id)
 		{
