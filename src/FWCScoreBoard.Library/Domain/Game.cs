@@ -16,5 +16,10 @@ namespace FWCScoreBoard.Library.Domain
 			Id = id;
 			StartDate = DateTime.UtcNow;
 		}
+
+		public void AddHomeTeam(string homeTeam)
+		{
+			HomeTeam = homeTeam;
+		}
 	}
 }
