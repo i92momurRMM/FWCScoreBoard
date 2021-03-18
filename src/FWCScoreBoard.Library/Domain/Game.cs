@@ -25,5 +25,10 @@ namespace FWCScoreBoard.Library.Domain
 
 			HomeTeam = homeTeam;
 		}
+
+		public void AddAwayTeam(string awayTeam)
+		{
+			AwayTeam = awayTeam;
+		}
 	}
 }
