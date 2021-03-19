@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FWCScoreBoard.Library.Domain;
 
 namespace FWCScoreBoard.Library.Repository
@@ -7,5 +8,6 @@ namespace FWCScoreBoard.Library.Repository
     {
         void AddGame(Game game);
         IEnumerable<Game> GetGames();
+        void RemoveGame(Guid id);
     }
 }

@@ -30,6 +30,11 @@ namespace FWCScoreBoard.Library.Services
 			return game.Id;
 		}
 
+		public void FinishGame(Guid id)
+		{
+			_gamesRepository.RemoveGame(id);
+		}
+
 		#region validations and specifications in the service
 		private void IsDuplicatedGame(Game game, IEnumerable<Game> games)
 		{

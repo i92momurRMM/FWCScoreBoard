@@ -18,5 +18,13 @@ namespace FWCScoreBoard.Library.Repository
         {
             return _games.Values;
         }
+
+        public void RemoveGame(Guid id)
+        {
+            if (_games.ContainsKey(id))
+            {
+                _games.Remove(id);
+            }
+        }
     }
 }
