@@ -1,7 +1,12 @@
 # Football World Cup Score Board
-Implementation of the Football World Cup Score Board as a library with TDD
+Implementation of the Football World Cup Score Board as a library with TDD.
 
-## Introduction
+## Notes for tests
+
+I have followed Classical or Detroit-school TDD (Inside-Out).
+
+Unit tests have been done to build the code and integration tests to check the operations as a whole. 
+
 In my opinion, tests are a form of 'executable documentation with TDD'. I emphasise that tests should be readable and understandable by anyone who does not know the application. For this reason, I use my own Test-Support Class:
 
 Including a template for practicing TDD and write any unit, functional or integration tests following a Given-When-Then (optional async) approach with xUnit framework.
