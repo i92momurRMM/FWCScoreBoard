@@ -26,5 +26,10 @@ namespace FWCScoreBoard.Library.Repository
                 _games.Remove(id);
             }
         }
+
+        public Game GetGame(Guid id)
+        {
+            return _games[id];
+        }
     }
 }

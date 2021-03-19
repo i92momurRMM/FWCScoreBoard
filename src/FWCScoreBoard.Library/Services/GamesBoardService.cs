@@ -32,6 +32,10 @@ namespace FWCScoreBoard.Library.Services
 
 		public void FinishGame(Guid id)
 		{
+			var game = _gamesRepository.GetGame(id);
+
+			IsStartedGame(id, game);
+
 			_gamesRepository.RemoveGame(id);
 		}
 
@@ -40,6 +44,12 @@ namespace FWCScoreBoard.Library.Services
 		{
 			if (games.Where(w => w.HomeTeam == game.HomeTeam && w.AwayTeam == game.AwayTeam).Count() > 0)
 				throw new DuplicatedGameException($"Invalid game {game.HomeTeam} - {game.AwayTeam}. It already on score board");
+		}
+
+		private void IsStartedGame(Guid id, Game game)
+		{
+			if (game == null || game.Id != id)
+				throw new GameNotStartedException($"Invalid game {id}. It doesn't exist on score board");
 		}
 		#endregion
 	}

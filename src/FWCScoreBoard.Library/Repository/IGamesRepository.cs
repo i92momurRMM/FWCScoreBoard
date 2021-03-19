@@ -9,5 +9,6 @@ namespace FWCScoreBoard.Library.Repository
         void AddGame(Game game);
         IEnumerable<Game> GetGames();
         void RemoveGame(Guid id);
+        Game GetGame(Guid id);
     }
 }
