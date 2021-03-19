@@ -51,6 +51,11 @@ namespace FWCScoreBoard.Library.Services
 			_gamesRepository.UpdateGame(id, game);
 		}
 
+		public IEnumerable<string> GetSummary()
+		{
+			return _gamesRepository.GetGames().Select(s => s.GetSummary());
+		}
+
 		#region validations and specifications in the service
 		private void IsDuplicatedGame(Game game, IEnumerable<Game> games)
 		{
