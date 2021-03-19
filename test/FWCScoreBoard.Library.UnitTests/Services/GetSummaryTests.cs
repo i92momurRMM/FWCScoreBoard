@@ -41,6 +41,13 @@ namespace FWCScoreBoard.Library.UnitTests.Services
 				_gamesRepositoryMock.Verify(x => x.GetGames());
 			}
 
+			[Fact]
+			public void Then_It_Should_Return_Ordered_Games_List()
+			{
+				var expectedOrderedGameSummary = ReturnGamesListInExpectedOrder();
+				_gameReports.Should().BeEquivalentTo(expectedOrderedGameSummary, options => options.WithStrictOrdering());
+			}
+
 			private List<Game> ReturnGamesList()
 			{
 				var game1 = new Game(Guid.NewGuid());
@@ -74,6 +81,13 @@ namespace FWCScoreBoard.Library.UnitTests.Services
 				game5.AddAwayTeamScore(1);
 
 				return new List<Game> { game1, game2, game3, game4, game5};
+			}
+
+			private IEnumerable<string> ReturnGamesListInExpectedOrder()
+			{
+				return ReturnGamesList().OrderByDescending(o => o.HomeTeamScore + o.AwayTeamScore)
+										.ThenByDescending(o => o.StartDate)
+										.Select(s => s.GetSummary());
 			}
 		}
 	}

@@ -53,7 +53,8 @@ namespace FWCScoreBoard.Library.Services
 
 		public IEnumerable<string> GetSummary()
 		{
-			return _gamesRepository.GetGames().Select(s => s.GetSummary());
+			var games = _gamesRepository.GetGames();
+			return SettingGamesSummaryFormat(games);
 		}
 
 		#region validations and specifications in the service
@@ -67,6 +68,13 @@ namespace FWCScoreBoard.Library.Services
 		{
 			if (game == null || game.Id != id)
 				throw new GameNotStartedException($"Invalid game {id}. It doesn't exist on score board");
+		}
+
+		private IEnumerable<string> SettingGamesSummaryFormat(IEnumerable<Game> games)
+		{
+			return games.OrderByDescending(o => o.HomeTeamScore + o.AwayTeamScore)
+						.ThenByDescending(o => o.StartDate)
+						.Select(s => s.GetSummary());
 		}
 		#endregion
 	}
