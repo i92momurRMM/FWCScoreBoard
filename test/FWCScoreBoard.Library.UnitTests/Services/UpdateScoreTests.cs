@@ -32,13 +32,24 @@ namespace FWCScoreBoard.Library.UnitTests.Services
 				game.AddAwayTeamScore(_awayTeamScore);
 
 				_gamesRepositoryMock = new Mock<IGamesRepository>();
-	
+				_gamesRepositoryMock
+					.Setup(x => x.GetGame(_gameId))
+					.Returns(
+						game
+					);
+
 				_sut = new GamesBoardService(_gamesRepositoryMock.Object);
 			}
 
 			protected override void When()
 			{
 				_sut.UpdateScore(_gameId, _homeTeamScore, _awayTeamScore);
+			}
+
+			[Fact]
+			public void Then_It_Should_Use_The_GamesRepository_To_Retrieve_The_Game()
+			{
+				_gamesRepositoryMock.Verify(x => x.GetGame(_gameId));
 			}
 
 			[Fact]

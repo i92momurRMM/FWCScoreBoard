@@ -41,7 +41,7 @@ namespace FWCScoreBoard.Library.Services
 
 		public void UpdateScore(Guid id, int homeTeamScore, int awayTeamScore)
 		{
-			var game = new Game(id);
+			var game = _gamesRepository.GetGame(id);
 
 			game.AddHomeTeamScore(homeTeamScore);
 			game.AddAwayTeamScore(awayTeamScore);
