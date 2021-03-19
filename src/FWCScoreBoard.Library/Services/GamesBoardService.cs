@@ -43,6 +43,8 @@ namespace FWCScoreBoard.Library.Services
 		{
 			var game = _gamesRepository.GetGame(id);
 
+			IsStartedGame(id, game);
+
 			game.AddHomeTeamScore(homeTeamScore);
 			game.AddAwayTeamScore(awayTeamScore);
 
