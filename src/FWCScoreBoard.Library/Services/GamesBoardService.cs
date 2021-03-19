@@ -39,6 +39,16 @@ namespace FWCScoreBoard.Library.Services
 			_gamesRepository.RemoveGame(id);
 		}
 
+		public void UpdateScore(Guid id, int homeTeamScore, int awayTeamScore)
+		{
+			var game = new Game(id);
+
+			game.AddHomeTeamScore(homeTeamScore);
+			game.AddAwayTeamScore(awayTeamScore);
+
+			_gamesRepository.UpdateGame(id, game);
+		}
+
 		#region validations and specifications in the service
 		private void IsDuplicatedGame(Game game, IEnumerable<Game> games)
 		{

@@ -31,5 +31,10 @@ namespace FWCScoreBoard.Library.Repository
         {
             return _games[id];
         }
+
+        public void UpdateGame(Guid id, Game game)
+        {
+            _games[id] = game;
+        }
     }
 }
