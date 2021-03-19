@@ -90,6 +90,37 @@ namespace FWCScoreBoard.Library.UnitTests.Services
 										.Select(s => s.GetSummary());
 			}
 		}
+
+		public class Given_No_Games_When_Requesting_Summary
+			: Given_When_Then_Test
+		{
+			private GamesBoardService _gameService;
+			private Mock<IGamesRepository> _gamesRepositoryMock;
+			private IEnumerable<string> _gameReports;
+
+			protected override void Given()
+			{
+				_gamesRepositoryMock = new Mock<IGamesRepository>();
+				_gamesRepositoryMock
+					.Setup(x => x.GetGames())
+					.Returns(new List<Game>());
+
+				_gameService = new GamesBoardService(_gamesRepositoryMock.Object);
+			}
+
+			protected override void When()
+			{
+				_gameReports = _gameService.GetSummary();
+			}
+
+			[Fact]
+			public void Then_It_Should_Return_Empty_List()
+			{
+				_gamesRepositoryMock.Verify(x => x.GetGames());
+
+				_gameReports.Should().HaveCount(0);
+			}
+		}
 	}
 }
 
