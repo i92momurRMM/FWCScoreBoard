@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\FWCScoreBoard.Library\FWCScoreBoard.Library.csproj" />
+    <ProjectReference Include="..\..\src\FWCScoreBoard.Library\FWCScoreBoard.Library.csproj" />
   </ItemGroup>
 
 </Project>

@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{73C82B7A-4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWCScoreBoard.Library.UnitTests", "test\FWCScoreBoard.Library.UnitTests\FWCScoreBoard.Library.UnitTests.csproj", "{2E790197-CB47-411F-B54A-7AA13F2E0F4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWCScoreBoard.Library.IntegrationTests", "FWCScoreBoard.Library.IntegrationTests\FWCScoreBoard.Library.IntegrationTests.csproj", "{338C66FB-96AD-49B5-8A7F-05789B103321}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FWCScoreBoard.Library.IntegrationTests", "test\FWCScoreBoard.Library.IntegrationTests\FWCScoreBoard.Library.IntegrationTests.csproj", "{338C66FB-96AD-49B5-8A7F-05789B103321}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
