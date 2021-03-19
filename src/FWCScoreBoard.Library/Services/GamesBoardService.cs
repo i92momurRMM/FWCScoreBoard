@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using FWCScoreBoard.Library.Domain;
+using FWCScoreBoard.Library.Exceptions;
 using FWCScoreBoard.Library.Repository;
 
 namespace FWCScoreBoard.Library.Services
@@ -19,10 +22,21 @@ namespace FWCScoreBoard.Library.Services
 			game.AddHomeTeam(homeTeam);
 			game.AddAwayTeam(awayTeam);
 
+			var games = _gamesRepository.GetGames();
+			IsDuplicatedGame(game, games);
+
 			_gamesRepository.AddGame(game);
 
 			return game.Id;
 		}
+
+		#region validations and specifications in the service
+		private void IsDuplicatedGame(Game game, IEnumerable<Game> games)
+		{
+			if (games.Where(w => w.HomeTeam == game.HomeTeam && w.AwayTeam == game.AwayTeam).Count() > 0)
+				throw new DuplicatedGameException($"Invalid game {game.HomeTeam} - {game.AwayTeam}. It already on score board");
+		}
+		#endregion
 	}
 }
 

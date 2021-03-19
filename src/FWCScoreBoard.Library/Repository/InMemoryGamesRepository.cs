@@ -1,6 +1,6 @@
-﻿using FWCScoreBoard.Library.Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using FWCScoreBoard.Library.Domain;
 
 namespace FWCScoreBoard.Library.Repository
 {
@@ -12,6 +12,11 @@ namespace FWCScoreBoard.Library.Repository
         public void AddGame(Game game)
         {
             _games.Add(game.Id, game);
+        }
+
+        public IEnumerable<Game> GetGames()
+        {
+            return _games.Values;
         }
     }
 }
